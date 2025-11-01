@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "zwetels.github.io/soysaucescholar"
+  title: "soysaucescholar"
   navbar:
     left:
       - href: index.qmd
