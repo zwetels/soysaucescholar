@@ -1,0 +1,129 @@
+---
+title: "Carrot Finder"
+format: html
+date: 09/30/2025
+---
+
+### The problem states:
+
+A bunny starts at $(0,0)$ in the coordinate plane and makes a series of hops. The bunny wants to get to a carrot at $(1,0)$.
+
+The bunny only has 8 choices for each hop. If its current location is $(x,y)$, its next hop must be to one of the following 8 points, much like how a knight moves on a chessboard, except 24 units in one direction and 7 units in a perpendicular direction.
+
+$(x+24,y+7)$, $(x+24,y-7)$, $(x-24,y+7)$, $(x-24,y-7)$, 
+$(x+7,y+24)$, $(x+7,y-24)$, $(x-7,y+24)$, $(x-7,y-24)$
+
+### The Solution
+**Consider $x$ and $y$ independently first:**\
+**For $x$:** we need a total displacement of +1 (from $x=0$ to $x=1$). We can either move $\pm 24$ or $\pm 7$. Let's call the number of 24-unit hops "$a$", with the sign indicating direction ($a=-4$ would mean that we took 4 24-unit hops to the left)*. Similarly, let's call the number of 7-unit hops "$b$". Let's invert the direction of $b$ (meaning $b=3$ would represent 3 7-unit hops to the left). The reason for this is a matter of convenience. Because the number of 24-unit hops and 7-unit hops will always be opposite signed of each other (in order to result in a net sum of 1), inverting one of them allows us to state that the total number of hops is: $|a+b|$.
+
+*\*The number of hops in this case does not account for any opposing hops that would "cancel" each other out. 2 24-unit hops to the right + 2 24-unit hops to the left will be represented as $a=0$. Similarly, 4 7-unit hops to the right, followed by 2 7-unit hops to the left will be represented as $b=2$.*
+
+Because we can always "cancel" out a hop to the right with a hop to the left, our total number of hops can always have an arbitrary number of twos added to it. Since we are looking for a net displacement of +1, let's set up an equation as follows:
+
+$$24a-7b=1$$
+
+$$\text{Total number of hops} = |a+b|+2k \text{ where } k \text{ is an arbitrary non-negative integer.}$$
+
+**For $y$:** we need a total displacement of 0 (from $y=0$ to $y=0$). Let's follow the precedent above, but the number of 24-unit hops will be represented by $c$, and the number of 7-unit hops will be represented by $d$. A positive value of $c$ will represent a hop "up". The direction of $d$ will be inverted, similar to $b$. This gives us the following equations:
+
+$$24c-7d=0$$
+
+$$\text{Total number of hops} = |c+d|+2k \text{ where } k \text{ is an arbitrary non-negative integer.}$$
+
+Based on the need for a vertical displacement of 0, there are three possible scenarios:
+
+1.  There are an even number of either 24-unit or 7-unit hops that cancel themselves out (e.g. 3 24-unit hops up + 3 24-unit hops down). This would give us:
+    
+    Total hops $= 0 + 2k$ where $k$ is an arbitrary non-negative integer. (Total hops could be any even, positive integer.)
+
+2.  Some number of 24-unit hops is canceled out by some number of 7-unit hops in the opposite direction. Since 24 and 7 are relatively prime, this would have to involve $c$ being some multiple of 7, and $d$ being some multiple of 24. This possibility gives us:
+    
+    Total hops $= 24k+7k$ where $k$ is an arbitrary non-negative integer. This simplifies to Total hops $= 31k$. (Total hops could be any multiple of 31).
+
+3.  A combination of both of the above (e.g. 7 24-unit hops up + 24 7-unit hops down + 3 7-unit hops up + 3 7-unit hops down). This gives us:
+    
+    Total hops $= 31k_1+2k_2$ where $k_1$ and $k_2$ are arbitrary non-negative integers.
+
+For the requirements of the $y$ displacement, we can conclude that the total number of hops must be some multiple of 31 + some multiple of 2 (restricted to non-negative results).
+
+**Back to $x$:**
+
+We know that $24a-7b=1$. We also know that the total number of hops can be measured by $|a+b|$. Based on these, let's make a table of possible values based on the integer solutions of the equation:
+
+| $a$ | $b$ | $|a+b|$ |
+|:---:|:---:|:-------:|
+| -23 | -79 | 102     |
+| -16 | -55 | 71      |
+| -9  | -31 | 40      |
+| -2  | -7  | 9       |
+| 5   | 17  | 22      |
+| 12  | 41  | 53      |
+| 19  | 65  | 84      |
+| 26  | 89  | 115     |
+
+From the table, we can see that as $a$ increases/decreases, so does $b$, therefore any value of $|a+b|$ will increase as $a$ and $b$ go towards either extreme. From this, we can conclude that we have the set of the lowest possible number of Total Hops here, based on $x$-based restrictions, therefore if we find a working solution here and it is the lowest working solution of the bunch, then we have found the lowest working solution. (A note: the Total Hops could be $|a+b|+2k$ where $k$ is an arbitrary non-negative integer.)
+
+We know that the number of $x$ hops must match the number of $y$ hops. Also, we know that for each 24-unit $x$ hop, there must be a 7-unit $y$ hop and vice-versa. This means that $|a|=|d|+2k$ and $|b|=|c|+2k$ where $k$ is an arbitrary non-negative integer. We also know that if the number of hops is less than 31, the $y$ hops must be made up of an even number of 24-unit "$c$" hops and an even number of 7-unit "$d$" hops (it would just be hopping back and forth). **Essentially, if the number of hops is less than 31, we need an even number of 24-hops and an even number of 7-hops.** Taking a look at our table, this doesn't exist. All of our options less than 31 involve an odd number of either count $(-2,-7),(5,17)$. Because of this, let's move to the next possible scenario, **31 or more hops:**
+
+For this case, in the $y$ hops, we need $7k$ 24-unit "$c$" hops, and $24k$ 7-unit "$d$" hops (where $k$ is an arbitrary non-negative integer) so that they can cancel each other out. Luckily, we can use the fact that we can always add pairs of 2 hops to the $x$ hops (1 hop right, 1 hop left). Let's add some extra "$a$" hops to the $(-2,-7)$ line. This leads us to a possible solution:
+
+| num of hops | type of hop | net effect   |
+|:-----------:|:-----------:|:------------:|
+| 13          | $(-24,-7)$  | $(-312,-91)$ |
+| 11          | $(+24,-7)$  | $(+264,-77)$ |
+| 7           | $(+7,+24)$  | $(+49,+168)$ |
+| **total** | **31 hops** | **$(+1,+0)$**|
+
+Essentially we are adding to the $(-2,-7)$ line. It had 2 24-unit hops left and 7 7-unit hops right, and we add 11 24-unit hops to the right and to the left. This allows for us to get the number of $y$-hops we need to cancel themselves out, without changing the net $x$ displacement. We use 24 7-unit hops down with 7 24-unit hops up to have a net $y$ displacement of 0. **Our lowest possible solution is 31 hops.**
+
+### Let's test our solution experimentally!
+
+To see if our solution is indeed the lowest, let's set up a program to test it.
+
+```python
+def main():
+    #starting positions
+    x=0
+    y=0
+    #num of hops
+    h=1
+    
+    #set of moves
+    moves=[(+24,+7),(+24,-7),(-24,+7),(-24,-7),
+           (+7,+24),(+7,-24),(-7,+24),(-7,-24)]
+    
+    visited=set({(0,0)})
+    newvisits=set({(0,0)})
+    
+    #testing hops up to 31
+    while h<32:
+        print("testing ",h," hops")
+        #move newvisits to thisvisited, so we can make a new clean newvisits
+        thisvisited=newvisits
+        newvisits=set({})
+        #for every new location, and for every hop from there
+        for (vx,vy) in thisvisited:
+            for (dx,dy) in moves:
+                #make the hop
+                x=vx+dx
+                y=vy+dy
+                #check for solution
+                if (x,y) == (1,0):
+                    print("solution found at ",h," hops!")
+                    return()
+                #check if this is a new place
+                if (x,y) not in visited:
+                    visited.add((x,y))
+                    newvisits.add((x,y))
+                x=0
+                y=0
+        h+=1
+    return()
+
+main()
+```
+
+***The Results:***
+
+The output of the program confirms that the first solution it finds is at 31 hops. This corroborates what we found mathematically!
