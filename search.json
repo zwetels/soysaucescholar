@@ -7,25 +7,11 @@
     "text": "If you have any questions, you can reach me at garlicsonata@gmail.com"
   },
   {
-    "objectID": "posts/Test Jupyter Lab.html",
-    "href": "posts/Test Jupyter Lab.html",
-    "title": "Jupyter Lab Test",
-    "section": "",
-    "text": "I’m going to see what I can do here. the following is a test ## Polar Axis\nFor a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport sys\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
-  },
-  {
-    "objectID": "posts/Test Jupyter Lab.html#this-is-a-jupyterlab-test",
-    "href": "posts/Test Jupyter Lab.html#this-is-a-jupyterlab-test",
-    "title": "Jupyter Lab Test",
-    "section": "",
-    "text": "I’m going to see what I can do here. the following is a test ## Polar Axis\nFor a demonstration of a line plot on a polar axis, see Figure 1.\n\n\nCode\nimport sys\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "soysaucescholar",
     "section": "",
-    "text": "Here’s some things of mine.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nJupyter Lab Test\n\n\n\n\n\n\n\n\nNov 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCarrot Finder\n\n\n\n\n\n\n\n\nSep 30, 2025\n\n\n\n\n\nNo matching items"
+    "text": "Here’s some things of mine.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCarrot Finder\n\n\n\n\n\n\n\n\nSep 30, 2025\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Carrot Finder.html",
