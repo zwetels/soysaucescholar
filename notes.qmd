@@ -1,0 +1,10 @@
+---
+title: "Notes"
+---
+
+Here's some notes from my classes:
+
+Physics:
+[Physics 1](posts/physics/physics1.qmd)
+
+Math:

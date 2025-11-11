@@ -1,11 +1,11 @@
 ---
 title: "soysaucescholar"
 listing:
-  contents: posts
+  contents: posts/blogposts
   sort: "date desc"
   type: default
   categories: true
 ---
 
-Here's some things of mine.
+Here's some things.
 
