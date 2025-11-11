@@ -2,7 +2,11 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Carrot Finder.html"
+      "/posts/blogposts/Carrot Finder.html"
     ]
+  },
+  {
+    "listing": "/posts/physics/physics1.html",
+    "items": []
   }
 ]

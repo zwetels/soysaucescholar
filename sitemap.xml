@@ -2,14 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://soysaucescholar.com/about.html</loc>
-    <lastmod>2025-11-06T19:02:01.353Z</lastmod>
+    <lastmod>2025-11-11T21:50:09.580Z</lastmod>
   </url>
   <url>
     <loc>https://soysaucescholar.com/index.html</loc>
-    <lastmod>2025-11-06T19:02:01.359Z</lastmod>
+    <lastmod>2025-11-11T21:50:09.586Z</lastmod>
   </url>
   <url>
-    <loc>https://soysaucescholar.com/posts/Carrot Finder.html</loc>
-    <lastmod>2025-11-06T19:02:01.359Z</lastmod>
+    <loc>https://soysaucescholar.com/notes.html</loc>
+    <lastmod>2025-11-11T21:50:09.586Z</lastmod>
+  </url>
+  <url>
+    <loc>https://soysaucescholar.com/posts/physics/physics1.html</loc>
+    <lastmod>2025-11-11T21:50:09.587Z</lastmod>
+  </url>
+  <url>
+    <loc>https://soysaucescholar.com/posts/blogposts/Carrot Finder.html</loc>
+    <lastmod>2025-11-11T21:50:09.586Z</lastmod>
   </url>
 </urlset>
